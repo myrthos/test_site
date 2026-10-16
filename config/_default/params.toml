@@ -1,6 +1,6 @@
 [main]
     separator = "-"
-    description = "Hinode is a clean documentation and blog theme for your Hugo site based on Bootstrap 5."
+    description = "Myrthos is a site creating blogs and projects about electronics, software development and photography."
     enableLanguageSelectionStorage = false
     canonifyAssetsURLs = false
     endorse = true
@@ -8,8 +8,9 @@
     loading = "lazy"
     breakpoint = "md"
     [main.colorMode]
+        #enableDarkMode = true
         enabled = true
-        modes = ["light", "dark"]
+        modes = ["dark", "light"]
         toggle = false
     [main.internalLinks]
         validate = true
@@ -25,17 +26,35 @@
     showSCSS = false
     purgeHTMLComments = false
 
+[analytics]
+    [analytics.goatcounter]
+        name = "myrthos"
+        enable = true
+
 [docs]
-    github = "https://github.com/gethinode/hinode"
-    release = "https://github.com/gethinode/hinode/releases/tag/"
+    contentPath ="/docs/"
+    github = "https://github.com/myrthos/myrthos-site"
+    release = "https://github.com/myrthos/myrthos-site/releases/tag/"
     checkVersion = false
+    hideReleases = true    # Hide the releases drop down when true
+    hideGitInfo = true     # Hide git information at the bottom of a docs page when true
+    showDocTOCTitle = true # Show the (short) title of the document above the TOC    
+
+[[docs.releases]]
+    label = "Shortcodes"
+    url = "/docs/shortcodes"
+
+[[docs.releases]]
+    label = "MPL"
+    url = "/docs/mpl"
 
 [navigation]
     anchor = true
-    logo = "/img/logo_icon.svg"
+    logo = "/img/Logo_Rotated_Text50.webp"
+    logoWidth = 174
     color = "body"
     fixed = true
-    offset = "5.5rem"
+    offset = "4.3em"
     breadcrumb = true
     toc = true
     sidebar = true
@@ -60,7 +79,7 @@
     weight = 10
 
 [[sharing.providers]]
-    name = "Twitter"
+    name = "X"
     url = "https://twitter.com/home?status={url}"
     icon = "fab x-twitter"
     weight = 20
@@ -78,58 +97,169 @@
     weight = 40
 
 [[sharing.providers]]
+    name = "Mastodon"
+    url = "#"
+    icon = "fab mastodon"
+    id = "mastodon"
+    source = "share?text={title}&url={url}"
+    prompt = "mastodon"
+    weight = 45
+
+[[sharing.providers]]
     name = "email"
     url = "{url}"
     icon = "fas link"
     weight = 50
     clipboard = true
 
+[[sharing.providers]]
+    name = "Clipboard"
+    url = "{url}"
+    icon = "fas link"
+    weight = 50
+    clipboard = true
+
 [favicon]
-    logo = "img/favicon.png"
-    sizes = [16, 32, 48]
+    logo = "img/favicon/favicon.png"
+    logoSize = 48
+    logoSizes = [32, 16]
+    LogoApple = "img/favicon/apple-touch-icon.png"
+    logoAppleSize = 180
+    logoAppleSizes = [152, 120, 76, 60]
+    LogoAndroid = "img/favicon/android-chrome.png"
+    logoAndroidSize = 256
+    logoAndroidSizes = [192]
+    maskIcon = "img/favicon/safari-pinned-tab.svg"
 
 [style]
-    primary = "#d43900"
-    secondary = "#6c757d"
-    success = "#198754"
-    info = "#0dcaf0"
-    warning = "#ffc107"
-    danger = "#dc3545"
-    light = "#f8f9fa"
-    dark = "#212529"
+    primary = "#0070E0"     # Celtic Blue
+    secondary = "#6c757d"   # Slate Grey
+    success = "#198754"     # Sea Green
+    info = "#1FBDDC"        # Aero
+    warning = "#ffc107"     # Amber
+    danger = "#dc3545"      # Rusty Red
+    light = "#f8f9fa"       # Sea Salt
+    dark = "#212529"        # Eerie Black
     themeOpacity = "10"
     darkModeShade = "20%"
     darkModeTint = "40%"
-    themeFont = "Inter"
+    themeFont = "asap"
     # themeFontPath = "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;600&display=swap" # external path
     themeFontPath = "/fonts" # local path
     fontSizeBase = "1rem"
 
 [schema]
     type = "Organization"
-    name = "Hinode"
-    # locale = "en-US" # defaults to the locale of the current site language
-    # twitter = "https://twitter.com/gethinode"
-    # linkedIn = ""
-    github = "https://github.com/gethinode/hinode"
+    name = "Myrthos"
+    locale = "en-US"
+    github = "https://github.com/myrthos/myrthos-site"
     section = "blog"
     [schema.author]
-        name = "Mark Dumay"
-        # twitter = "https://twitter.com/markdumay"
-        linkedin = "https://www.linkedin.com/in/markdumay/"
-        github = "https://github.com/markdumay"
+        name = "Joost Mans"
+        github = "https://github.com/myrthos"
+        mastodon = "https://techhub.social/@Myrthos"
     [schema.logo]
-        url = "img/logo512x512.png"
-        width = 512
-        height = 512
+        url = "img/Logo_Rotated_light.png"
+        width = 390
+        height = 350
     [schema.image]
-        url = "img/logo1280x640.png"
-        width = 1280
-        height = 640
+        url = "img/Logo_Rotated_Text_light.png"
+        width = 1359
+        height = 390
 
 [opengraph]
-    images = ["logo.png"]
+    images = ["Logo_Rotated_Text_light.png"]
     # locale = "en_US" # defaults to the locale of the current site language
+
+[comments]
+    enabled = true
+    repo = "myrthos/myrthos-site"
+    issueTerm = "term" # pathname, url, title, og:title, term
+    label = "Comment"
+    # By default, light and dark mode correspond to github-light and github-dark, respectively.
+    # Optional values: github-light, github-dark, preferred-color-scheme, github-dark-orange, icy-dark, dark-blue, photon-dark.
+    theme = "" 
 
 [links]
     hinode = "https://gethinode.com"
+
+[multipage]
+    # These parameters are only valid when the layout of a page bundle is set to "multipage"
+    paginator = "buttons"   # The paginator to show at the bottom of the page. Valid options are: 
+                            # "arrows"   Shows arrows to the left/right if there is a next/previous page
+                            # "buttons"  Shows navigation buttons (centered)
+                            # "list"     Shows a list of available pages (centered)
+                            # "dropdown" Shows a drop-down box and the available pages (centered) 
+                            # "dropup"   Shows a drop-up box and the available pages (centered) 
+    tooltips = "on"         # When paginator="buttons", enables ("on") or disables ("off") the display of tooltips 
+                            #  when hovering over the buttons. Not used in the other paginator options.
+    positions = 4           # When paginator="buttons", Sets the maximum number of button positions.
+                            # Not used in the other paginator options.
+
+[home]
+    sections = ["blog", "projects", "gallery"]
+
+[sections]
+    [sections.blog]
+        title = "Blog"
+        sort = "date"
+        reverse = true
+        nested = true
+        cols = 3
+        color = ""
+        padding = "0"
+        header = "publication"
+        footer = "tags"
+        orientation = "stacked"
+        style = "border-0 card-zoom"
+        homepage = 3
+        separator = true
+    [sections.projects]
+        title = "Projects"
+        layout = "card"
+        sort = "title"
+        reverse = false
+        nested = true
+        cols = 1
+        background = "body-tertiary"
+        color = "body"
+        padding = "3"
+        header = "publication"
+        footer = "tags"
+        orientation = "horizontal-sm"
+        style = "border-1 card-emphasize"
+        homepage = 3
+        separator = false
+        multipage = true        # Used for multi-page sections
+    [sections.gallery]
+        title = "Gallery"
+        layout = "card"
+        sort = "date"
+        reverse = true 
+        nested = false
+        background = ""
+        color = ""
+        style = "border-0 card-zoom"
+        cols = 3
+        padding = "0"
+        header = "publication"
+        footer = "tags"
+        orientation = "stacked"
+        homepage = 3
+        separator = true
+    [sections.docs]
+        title = "Documentation"
+        layout = "card"     # card, list, nav
+        sort = "title"      # date, lastmod, weight, title or custom as defined in page frontmatter
+        reverse = false 
+        nested = false      # indicate the content should be listed recursively for the entire section.
+        background = ""     # “primary”, “secondary”, “success”, “danger”, “warning”, “info”, “light”, “dark”, “white”, “black”, “body”, or “body-tertiary”
+        color = ""          # “primary”, “secondary”, “success”, “danger”, “warning”, “info”, “light”, “dark”, “white”, “black”, “body”, or “body-tertiary”
+        style = "border-0 card-zoom" # Styling attributes for each element
+        cols = 3            # 1..5
+        padding = "0"       # “0”, “1”, “2”, “3”, “4”, “5”, or “auto”
+        header = "publication"     # Header of card: “full” (default), “publication”, “tags”, and “none”.
+        footer = "tags"     # Footer of card: “full”, “publication”, “tags”, and “none” (default).
+        orientation = "stacked" # Thumbnail: “stacked” (default), “horizontal”, or “none”
+        homepage = 3        # Number of cards to display
+        separator = true    # Show separator line between items, or not                  

@@ -1,0 +1,8 @@
+{{- partial "page/thumbnail.html" (dict "page" . "wrapper" "mb-5") -}}
+
+{{ .Content }}
+
+{{- if and .Site.Params.comments.enabled .Params.showComments | default true -}}
+    <br/><hr>
+    {{ partial "assets/comments.html" . }}
+{{ end -}}

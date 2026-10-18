@@ -106,13 +106,6 @@
     weight = 45
 
 [[sharing.providers]]
-    name = "email"
-    url = "{url}"
-    icon = "fas link"
-    weight = 50
-    clipboard = true
-
-[[sharing.providers]]
     name = "Clipboard"
     url = "{url}"
     icon = "fas link"
@@ -173,7 +166,7 @@
 
 [comments]
     enabled = true
-    repo = "myrthos/myrthos-site"
+    repo = "myrthos/test_site"
     issueTerm = "term" # pathname, url, title, og:title, term
     label = "Comment"
     # By default, light and dark mode correspond to github-light and github-dark, respectively.

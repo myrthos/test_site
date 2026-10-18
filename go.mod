@@ -19,6 +19,7 @@ require (
 	github.com/gethinode/mod-mermaid/v5 v5.1.1 // indirect
 	github.com/gethinode/mod-simple-datatables/v4 v4.3.3 // indirect
 	github.com/gethinode/mod-utils/v6 v6.16.0 // indirect
+	github.com/myrthos/mod-mgallery v0.1.10 // indirect
 	github.com/nextapps-de/flexsearch v0.0.0-20260529083235-f7ed963096a0 // indirect
 	github.com/twbs/bootstrap v5.3.8+incompatible // indirect
 )
